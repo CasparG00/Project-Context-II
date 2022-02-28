@@ -11,8 +11,9 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         currentTransform = startingTransform;
+        EventSystem<Transform>.Invoke(EventType.playerMoved, currentTransform);
     }
-    
+
     private void Update()
     {
         var results = Physics2D.OverlapCircleAll(currentTransform.position, jumpRange, plantMask);
@@ -39,19 +40,22 @@ public class PlayerController : MonoBehaviour
 
         if (closest != null)
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+            if (Input.GetButtonDown("Fire1"))
             {
                 currentTransform = closest;
+                
+                EventSystem<Transform>.Invoke(EventType.playerMoved, currentTransform);
             }
         }
     }
 
+    private void OnPlayerMoved(Transform target)
+    {
+        
+    }
+
     private void OnDrawGizmos()
     {
-        if (currentTransform == null) return;
-        Gizmos.color = Color.blue;
-        Gizmos.DrawSphere(currentTransform.position, .3f);
-
         if (closest == null) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(closest.position,.3f);
