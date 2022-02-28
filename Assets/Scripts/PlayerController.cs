@@ -49,11 +49,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnPlayerMoved(Transform target)
-    {
-        
-    }
-
     private void OnDrawGizmos()
     {
         if (closest == null) return;
