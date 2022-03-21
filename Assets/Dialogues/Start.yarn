@@ -1,0 +1,31 @@
+﻿title: Start
+tags:
+---
+Secretary: Erik has just informed us that the public is pushing for a change of the city block on Greenstreet.
+Secretary: The building company has checked the foundation of the housing there,
+Secretary: and agreed that we should start from scratch.
+Secretary: They already have an idea what to do with the space this afternoon already.
+-> Player: This afternoon already? That gives us only a few hours to decide. I better quickly discuss with the others.
+-> Player: Easy, I already know who would have some great ideas.
+===
+
+title: Society
+tags:
+---
+-> Player: Have you heard of the block on Greenstreet?
+    Society: Yes, I've heard from Secretary.
+    Player: They want us to start from scratch.
+    Society: I know exactly what we should do with it.
+    -> Player: Do tell, we don't have much time to decide.
+        Society: We should invest in one of those vertical farms they are developing at Columbia university.
+        Society: It produces the yield of 700 acres of farmland in the size of a big retail store.
+        Society: The benefits are endless!
+        Society: It saves water, it uses no pesticides and it can produce 365 days a year!
+        Society: It is a very expensive investment though...
+        Society: A new vertical farm can cost up to 100 million dollars, however the investment basically pays for itself over time.
+        -> Player: That sounds like a great idea!
+        -> Player: Hmm... I'm not really sure if that's what's best.
+        -> Player: That's crazy! 100 million, That is way too expensive!
+    -> Player: I should listen to the others first, I will see you in a bit.
+-> Player: Nevermind.
+===

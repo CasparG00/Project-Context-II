@@ -8,6 +8,8 @@ public class DialogueBubbleBehaviour : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speakerNameProvider;
 
     private DialogueRunner dialogueRunner;
+    
+    [SerializeField] private Transform playerBubbleAnchor;
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class DialogueBubbleBehaviour : MonoBehaviour
 
         if (speakerNameProvider.text == "Player")
         {
-            dialogueBubble.transform.position = Camera.main.WorldToScreenPoint(Vector3.zero);
+            dialogueBubble.transform.position = Camera.main.WorldToScreenPoint(playerBubbleAnchor.position);
         }
         else
         {
