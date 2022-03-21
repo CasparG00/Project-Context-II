@@ -1,4 +1,5 @@
 using UnityEngine;
+using Yarn.Unity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,14 +7,25 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float input;
 
+    private DialogueRunner dialogueRunner;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
     private void Update()
     {
         input = Input.GetAxisRaw("Horizontal");
-        rb.velocity = Vector2.right * (walkSpeed * input);
+        
+        if (!dialogueRunner.IsDialogueRunning)
+        {
+            rb.velocity = Vector2.right * (walkSpeed * input);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }
