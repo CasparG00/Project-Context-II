@@ -1,23 +1,23 @@
 ﻿title: Start
 tags:
 ---
-<<set $talkedToSecretary to false>>
-<<if $talkedToSecretary == false>>
 Secretary: Erik has just informed us that the public is pushing for a change of the city block on Greenstreet.
 Secretary: The building company has checked the foundation of the housing there,
 Secretary: and agreed that we should start from scratch.
 Secretary: They already have an idea what to do with the space this afternoon already.
 -> Player: This afternoon already? That gives us only a few hours to decide. I better quickly discuss with the others.
 -> Player: Easy, I already know who would have some great ideas.
-<<set $talkedToSecretary to true>>
 <<set $talkedToNature to false>>
 <<set $talkedToSociety to false>>
-<<set $talkedToCulture to false>>
-<<else>>
+<<set $talkedToCulture to false>>4
+===
+
+title: Secretary
+tags:
+---
 Secretary: Have you made up your mind?
 -> Player: Yes, I know what to do with the city block!
 -> Player: No, I should think it over some more.
-<<endif>>
 ===
 
 title: Society

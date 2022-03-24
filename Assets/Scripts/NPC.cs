@@ -5,8 +5,15 @@ public class NPC : MonoBehaviour
 {
     public string speakerName;
     [SerializeField] private Transform dialogueBubbleAnchor;
-    [SerializeField] private string conversationStartNode;
+    [SerializeField] private string[] conversationStartNode;
     private DialogueRunner dialogueRunner;
+
+    private int myIndex;
+    private int Index
+    {
+        get => myIndex;
+        set => myIndex = Mathf.Clamp(value, 0, conversationStartNode.Length - 1);
+    }
 
     private void Start()
     {
@@ -16,11 +23,12 @@ public class NPC : MonoBehaviour
     public void StartConversation()
     {
         if (dialogueRunner.IsDialogueRunning) return;
-        dialogueRunner.StartDialogue(conversationStartNode);
+        dialogueRunner.StartDialogue(conversationStartNode[Index]);
     }
 
     public Transform GetBubbleAnchor()
     {
+        Index++;
         return dialogueBubbleAnchor;
     }
 }

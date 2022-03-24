@@ -833,6 +833,7 @@ GameObject:
   - component: {fileID: 653285414}
   - component: {fileID: 653285413}
   - component: {fileID: 653285412}
+  - component: {fileID: 653285415}
   m_Layer: 5
   m_Name: DialogueRunner
   m_TagString: Untagged
@@ -926,6 +927,18 @@ Transform:
   m_Father: {fileID: 255106944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653285415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653285411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10197a2e395128a4fb7589d20c1c1ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &719822187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1198,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Culture
   dialogueBubbleAnchor: {fileID: 1889655296}
-  conversationStartNode: Culture
+  conversationStartNode:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!1 &765670326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1686,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Society
   dialogueBubbleAnchor: {fileID: 464929654}
-  conversationStartNode: Society
+  conversationStartNode:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!61 &890056562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2022,7 +2049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Secretary
   dialogueBubbleAnchor: {fileID: 339921480}
-  conversationStartNode: Start
+  conversationStartNode:
+  - Secretary
 --- !u!1 &1197706145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2231,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Nature
   dialogueBubbleAnchor: {fileID: 981024696}
-  conversationStartNode: Nature
+  conversationStartNode:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
 --- !u!61 &1604978671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2307,7 +2341,7 @@ GameObject:
   - component: {fileID: 1623537621}
   - component: {fileID: 1623537622}
   m_Layer: 0
-  m_Name: Secretary (phone)
+  m_Name: Secretary NPC (phone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
