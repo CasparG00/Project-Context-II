@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Yarn.Unity;
@@ -10,6 +11,7 @@ public class OptionsPicker : MonoBehaviour
     [SerializeField] private KeyCode moveSelectionUp;
     [SerializeField] private KeyCode moveSelectionDown;
 
+    private readonly List<Transform> options = new List<Transform>();
     private int selectedIndex;
     
     private void Update()
@@ -19,10 +21,30 @@ public class OptionsPicker : MonoBehaviour
         for (var i = 0; i < transform.childCount; i++)
         {
             var child = transform.GetChild(i);
-            child.GetComponent<TextMeshProUGUI>().color = i == selectedIndex ? selectedColor : unselectedColor;
+            if (child.gameObject.activeSelf)
+            {
+                if (!options.Contains(child))
+                {
+                    options.Add(child);
+                }
+            }
+            else
+            {
+                if (options.Contains(child))
+                {
+                    options.Remove(child);
+                }
+            }
+        }
+        
+        if (options.Count == 0) return;
+
+        for (var i = 0; i < options.Count; i++)
+        {
+            options[i].GetComponent<TextMeshProUGUI>().color = i == selectedIndex ? selectedColor : unselectedColor;
         }
 
-        if (Input.GetKeyUp(moveSelectionUp))
+        if (Input.GetKeyDown(moveSelectionUp))
         {
             selectedIndex -= 1;
         }
@@ -32,20 +54,20 @@ public class OptionsPicker : MonoBehaviour
             selectedIndex += 1;
         }
 
-        if (selectedIndex >= transform.childCount)
+        if (selectedIndex >= options.Count)
         {
             selectedIndex = 0;
         } else if (selectedIndex < 0)
         {
-            selectedIndex = transform.childCount - 1;
+            selectedIndex = options.Count - 1;
         }
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space))
         {
-            transform.GetChild(selectedIndex).GetComponent<OptionView>().InvokeOptionSelected();
-            for (var i = 0; i < transform.childCount; i++)
+            options[selectedIndex].GetComponent<OptionView>().InvokeOptionSelected();
+            foreach (var t in options)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                t.gameObject.SetActive(false);
             }
         }
     }

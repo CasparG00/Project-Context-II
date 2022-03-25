@@ -4,7 +4,6 @@ using Yarn.Unity;
 public class DialogueFlowManager : MonoBehaviour
 {
     private DialogueRunner dialogueRunner;
-    private bool talkedToSecretary;
 
     private void Start()
     {
@@ -13,6 +12,6 @@ public class DialogueFlowManager : MonoBehaviour
 
     private void Update()
     {
-        dialogueRunner.VariableStorage.TryGetValue("$talkedToSecretary", out talkedToSecretary);
+        dialogueRunner.VariableStorage.TryGetValue("$talkedToSecretary", out bool talkedToSecretary);
     }
 }

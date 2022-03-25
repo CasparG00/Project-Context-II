@@ -9,7 +9,7 @@ Secretary: They already have an idea what to do with the space this afternoon al
 -> Player: Easy, I already know who would have some great ideas.
 <<set $talkedToNature to false>>
 <<set $talkedToSociety to false>>
-<<set $talkedToCulture to false>>4
+<<set $talkedToCulture to false>>
 ===
 
 title: Secretary
@@ -23,79 +23,118 @@ Secretary: Have you made up your mind?
 title: Society
 tags:
 ---
+<<if $talkedToSociety == true>>
+    Society: Welcome back, do you want to hear about my plan again?
+    -> Player: Do tell, we don't have much time to decide.
+        Society: Of course! Here is my plan...
+        <<jump SocietyPlan>>
+    -> Player: No thanks.
+        Player: No thanks, I still know what your plan is!
+<<else>>
 Player: Hello Society, have you got a minute?
 -> Player: Have you heard of the block on Greenstreet?
     Society: Yes, I've heard from Secretary.
     Player: They want us to start from scratch.
     Society: I know exactly what we should do with it.
     -> Player: Do tell, we don't have much time to decide.
-        Society: We should invest in one of those vertical farms they are developing at Columbia university.
-        Society: It produces the yield of 700 acres of farmland in the size of a big retail store.
-        Society: The benefits are endless!
-        Society: It saves water, it uses no pesticides and it can produce 365 days a year!
-        Society: It is a very expensive investment though...
-        Society: A new vertical farm can cost up to 100 million dollars, however the investment basically pays for itself over time.
-        -> Player: That sounds like a great idea!
-        -> Player: Hmm... I'm not really sure if that's what's best.
-        -> Player: That's crazy! 100 million, That is way too expensive!
+        <<jump SocietyPlan>>
     -> Player: I should listen to the others first, I will see you in a bit.
 -> Player: Nevermind.
+<<endif>>
+===
+
+title: SocietyPlan
+tags:
+---
+Society: We should invest in one of those vertical farms they are developing at Columbia university.
+Society: It produces the yield of 700 acres of farmland in the size of a big retail store.
+Society: The benefits are endless!
+Society: It saves water, it uses no pesticides and it can produce 365 days a year!
+Society: It is a very expensive investment though...
+Society: A new vertical farm can cost up to 100 million dollars, however the investment basically pays for itself over time.
+-> Player: That sounds like a great idea!
+-> Player: Hmm... I'm not really sure if that's what's best.
+-> Player: That's crazy! 100 million, That is way too expensive!
+<<set $talkedToSociety to true>>
 ===
 
 title: Nature
 tags:
 ---
 Player: Hey Nature, can I talk to you for a sec?
--> Did they already notify you about Greenstreet? We can basically decide what to do with it.
+-> Did they already notify you about Greenstreet? We can basically decide what to do with it. <<if $talkedToNature == false>>
     Nature: Yeah dude, Amazing right. I know what we should do with it.
     -> Player: So what do you think we should do with it then?
-        Nature: We should just fill it with nature man.
-        Nature: Like giving a bit of the city back to her.
-        Nature: Plant hundreds of trees and make it accessible for all the animals.
-        Nature: Give nature its space.
-        -> Player: That sounds like a great idea.
-            Nature: Thanks my man!
-        -> Player: How is that going to help the city?
-            Nature: Why should we always help the city? We should help nature for once.
-            Nature: But if you really want to know; all those trees and plants will reduce city pollution.
-            Nature: It would absorb tons of CO2, man.
-            Nature: It will also decrease the air temperature and improve the air,
-            Nature: but more importantly it would give the animals a place to return and live peacefully.
-        -> Player: That sounds ridiculous.
-            Nature: It's not ridiculous, it's different.
+        <<jump NaturePlan>>
     -> Player: Wait, I should listen to the others first.
         Nature: See you in a bit, my man.
--> Oh nevermind, I need to speak with someone else first.
+-> Player: Could you tell me about your plan again? <<if $talkedToNature == true>>
+    Nature: Sure! Here's the deal, my man...
+    <<jump NaturePlan>>
+-> Player: Oh nevermind, I need to speak with someone else first.
     Nature: See you in a bit, my man.
+===
+
+title: NaturePlan
+tags:
+---
+Nature: We should just fill it with nature man.
+Nature: Like giving a bit of the city back to her.
+Nature: Plant hundreds of trees and make it accessible for all the animals.
+Nature: Give nature its space.
+-> Player: That sounds like a great idea.
+    Nature: Thanks my man!
+-> Player: How is that going to help the city?
+    Nature: Why should we always help the city? We should help nature for once.
+    Nature: But if you really want to know; all those trees and plants will reduce city pollution.
+    Nature: It would absorb tons of CO2, man.
+    Nature: It will also decrease the air temperature and improve the air,
+    Nature: but more importantly it would give the animals a place to return and live peacefully.
+-> Player: That sounds ridiculous. <<if $talkedToNature == false>>
+    Nature: It's not ridiculous, it's different.
+-> Player: That still sounds ridiculous. <<if $talkedToNature == true>>
+    Nature: It's not ridiculous, it's different.
+<<set $talkedToNature to true>>
 ===
 
 title: Culture
 tags:
 ---
 Player: Hey Culture, have you got a moment?
--> Player: Did they notify you about the free block on Greenstreet?
+-> Player: Did they notify you about the free block on Greenstreet? <<if $talkedToCulture == false>>
     Player: We can do anything with it.
     Culture: Yes I've heard. That sounds exciting doesn't it?
     Culture: We could finally make a space that the people want.
     -> Player: And what do the people want?
-        Culture: We should make it a public park.
-        Culture: A place where people can hang out and relax,
-        Culture: maybe even play sports together or enjoy a bit of nature.
-        -> Player: That sounds like a good idea.
-            Culture: Thank you!
-        -> Don't we already have some of those? How is that going to help?
-            Culture: These public areas shape the community ties in neighborhoods.
-            Culture: It is very important that we have them available around the city for everyone.
-            Culture: These areas also serve as blending areas for the urban environment.
-            Culture: Places like this give the people a better perception of the public space.
-            Culture: It is also proven that neighborhoods with these types of public spaces have a lower crime rate.
-            Culture: See how I added that in there since I know you like your facts?!
-        -> That sounds like a waste of space.
-            Culture: It isn't, but you do you.
+        <<jump CulturePlan>>
     -> Player: Oh sorry, I should listen to the other ideas first.
         Culture: Okay, but you better speak with me soon.
         Culture: I'm the one with the ideas that are actually good.
+-> Player: So what was that plan you had again? <<if $talkedToCulture == true>>
+    Culture: Ah, so you ARE interested after all!
+    Culture: So, here's the plan...
+    <<jump CulturePlan>>
 -> Player: Oh sorry, I should speak with someone else first.
     Culture: Okay, but you better speak with me soon.
     Culture: I'm the one with the ideas that are actually good.
+===
+
+title: CulturePlan
+tags:
+---
+Culture: We should make it a public park.
+Culture: A place where people can hang out and relax,
+Culture: maybe even play sports together or enjoy a bit of nature.
+-> Player: That sounds like a good idea.
+    Culture: Thank you!
+-> Don't we already have some of those? How is that going to help?
+    Culture: These public areas shape the community ties in neighborhoods.
+    Culture: It is very important that we have them available around the city for everyone.
+    Culture: These areas also serve as blending areas for the urban environment.
+    Culture: Places like this give the people a better perception of the public space.
+    Culture: It is also proven that neighborhoods with these types of public spaces have a lower crime rate.
+    Culture: See how I added that in there since I know you like your facts?!
+-> That sounds like a waste of space.
+    Culture: It isn't, but you do you.
+<<set $talkedToCulture to true>>
 ===

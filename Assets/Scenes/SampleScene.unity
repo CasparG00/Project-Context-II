@@ -381,7 +381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339921479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 2, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1623537621}
@@ -1199,13 +1199,7 @@ MonoBehaviour:
   speakerName: Culture
   dialogueBubbleAnchor: {fileID: 1889655296}
   conversationStartNode:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Culture
 --- !u!1 &765670326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1490,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 826707910}
   optionViewPrefab: {fileID: 1790992998093274036, guid: 7d2ac814229a65343a3ee5acfc480f13, type: 3}
   lastLineText: {fileID: 0}
-  fadeTime: 0
+  fadeTime: 0.1
   showUnavailableOptions: 0
 --- !u!114 &826707913
 MonoBehaviour:
@@ -1687,13 +1681,7 @@ MonoBehaviour:
   speakerName: Society
   dialogueBubbleAnchor: {fileID: 464929654}
   conversationStartNode:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Society
 --- !u!61 &890056562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2050,6 +2038,7 @@ MonoBehaviour:
   speakerName: Secretary
   dialogueBubbleAnchor: {fileID: 339921480}
   conversationStartNode:
+  - Start
   - Secretary
 --- !u!1 &1197706145
 GameObject:
@@ -2232,12 +2221,7 @@ MonoBehaviour:
   speakerName: Nature
   dialogueBubbleAnchor: {fileID: 981024696}
   conversationStartNode:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Nature
 --- !u!61 &1604978671
 BoxCollider2D:
   m_ObjectHideFlags: 0
