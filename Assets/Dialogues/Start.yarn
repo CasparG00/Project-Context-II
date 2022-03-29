@@ -1,5 +1,4 @@
 ﻿title: Start
-tags:
 ---
 Secretary: Erik has just informed us that the public is pushing for a change of the city block on Greenstreet.
 Secretary: The building company has checked the foundation of the housing there,
@@ -13,7 +12,6 @@ Secretary: They already have an idea what to do with the space this afternoon al
 ===
 
 title: Secretary
-tags:
 ---
 Secretary: Have you made up your mind?
 -> Player: Yes, I know what to do with the city block!
@@ -21,7 +19,6 @@ Secretary: Have you made up your mind?
 ===
 
 title: Society
-tags:
 ---
 <<if $talkedToSociety == true>>
     Society: Welcome back, do you want to hear about my plan again?
@@ -44,7 +41,6 @@ Player: Hello Society, have you got a minute?
 ===
 
 title: SocietyPlan
-tags:
 ---
 Society: We should invest in one of those vertical farms they are developing at Columbia university.
 Society: It produces the yield of 700 acres of farmland in the size of a big retail store.
@@ -59,7 +55,6 @@ Society: A new vertical farm can cost up to 100 million dollars, however the inv
 ===
 
 title: Nature
-tags:
 ---
 Player: Hey Nature, can I talk to you for a sec?
 -> Did they already notify you about Greenstreet? We can basically decide what to do with it. <<if $talkedToNature == false>>
@@ -76,7 +71,6 @@ Player: Hey Nature, can I talk to you for a sec?
 ===
 
 title: NaturePlan
-tags:
 ---
 Nature: We should just fill it with nature man.
 Nature: Like giving a bit of the city back to her.
@@ -98,7 +92,6 @@ Nature: Give nature its space.
 ===
 
 title: Culture
-tags:
 ---
 Player: Hey Culture, have you got a moment?
 -> Player: Did they notify you about the free block on Greenstreet? <<if $talkedToCulture == false>>
@@ -120,7 +113,6 @@ Player: Hey Culture, have you got a moment?
 ===
 
 title: CulturePlan
-tags:
 ---
 Culture: We should make it a public park.
 Culture: A place where people can hang out and relax,
