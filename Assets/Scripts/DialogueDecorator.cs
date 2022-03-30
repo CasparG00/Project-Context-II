@@ -3,19 +3,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 
-public class SpeakerSpriteBehaviour : MonoBehaviour
+public class DialogueDecorator : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI speakerNameProvider;
     [SerializeField] private float fadeSpeed = 10;
+    
+    [SerializeField] private TextMeshProUGUI[] influencedTextComponents;
+    [SerializeField] private Image backgroundImageComponent;
     private Image uiImage;
     private DialogueRunner dialogueRunner;
 
     private Color targetColor;
+    private Color baseBackgroundImageColor;
 
     private void Start()
     {
         uiImage = GetComponent<Image>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
+        baseBackgroundImageColor = backgroundImageComponent.color;
     }
 
     private void LateUpdate()
@@ -46,6 +51,18 @@ public class SpeakerSpriteBehaviour : MonoBehaviour
                     {
                         targetColor = new Color(1, 1, 1, 0);
                     }
+                    
+                    SetStyleOnTextComponents(influencedTextComponents, npc.font, npc.textColor);
+                    
+                    if (npc.backgroundSprite)
+                    {
+                        backgroundImageComponent.sprite = npc.backgroundSprite;
+                        backgroundImageComponent.color = Color.white;
+                    }
+                    else
+                    {
+                        backgroundImageComponent.color = baseBackgroundImageColor;
+                    }
                     break;
                 }
             }
@@ -53,6 +70,16 @@ public class SpeakerSpriteBehaviour : MonoBehaviour
         else
         {
             targetColor = new Color(1, 1, 1, 0);
+        }
+    }
+
+    private void SetStyleOnTextComponents(TextMeshProUGUI[] textComponents, TMP_FontAsset font, Color textColor)
+    {
+        if (!font) return;
+        foreach (var component in textComponents)
+        {
+            component.font = font;
+            component.color = textColor;
         }
     }
 }

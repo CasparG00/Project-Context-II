@@ -914,6 +914,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerNameProvider: {fileID: 7778558434893922586}
   fadeSpeed: 10
+  influencedTextComponents:
+  - {fileID: 7778558434893922586}
+  - {fileID: 7778558435815184756}
+  backgroundImageComponent: {fileID: 7778558435750986795}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,8 +1362,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Culture
-  dialogueSprite: {fileID: 21300000, guid: 8da0c17916a495f4aa350c64bd4136f8, type: 3}
   conversationStartNode: Culture
+  dialogueSprite: {fileID: 21300000, guid: 8da0c17916a495f4aa350c64bd4136f8, type: 3}
+  backgroundSprite: {fileID: 0}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textColor: {r: 0, g: 0.3647059, b: 0.8196079, a: 1}
 --- !u!1 &780212888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,8 +1598,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Society
-  dialogueSprite: {fileID: 21300000, guid: df0f1d0fa6fc8314a8e922a049ed9b2a, type: 3}
   conversationStartNode: Society
+  dialogueSprite: {fileID: 21300000, guid: df0f1d0fa6fc8314a8e922a049ed9b2a, type: 3}
+  backgroundSprite: {fileID: 0}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textColor: {r: 0.93725497, g: 0.8117648, b: 0.83921576, a: 1}
 --- !u!61 &890056562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2397,8 +2407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Nature
-  dialogueSprite: {fileID: 21300000, guid: 804061586ecb0e0468c1c47ffbb07416, type: 3}
   conversationStartNode: Nature
+  dialogueSprite: {fileID: 21300000, guid: 804061586ecb0e0468c1c47ffbb07416, type: 3}
+  backgroundSprite: {fileID: 0}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textColor: {r: 0.37647063, g: 0.4431373, b: 0.30980393, a: 1}
 --- !u!61 &1604978671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2615,8 +2628,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Secretary
-  dialogueSprite: {fileID: 0}
   conversationStartNode: Secretary
+  dialogueSprite: {fileID: 0}
+  backgroundSprite: {fileID: 0}
+  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1723385552
 GameObject:
   m_ObjectHideFlags: 0
