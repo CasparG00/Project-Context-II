@@ -180,3 +180,31 @@ Player: Alright we have discussed long enough. I will take all your opinions int
     //delete asset <instantiate asset>
 //<<set $MadeChoice to true>>
 ===
+
+Title: NatureChoice
+---
+Player: Good afternoon everyone.
+Player: I gathered you all to give each of you the opportunity to share your ideas about the nature reserve we will be building on Greenstreet.
+Player: There might be options to change the nature reserve concept for the better. 
+Player: Let’s start with Society. What do you think?
+Society: I don’t really see the point of using valuable city space to build a nature reserve.
+Nature: It would absorb CO2 and improve air quality, and there totally is a point Society, only this time it is for the flora and fauna not us.
+Nature: It is about time we put nature first and humanity second. 
+Society: Yeah, I am not sure I agree with you on that one.
+Culture: We should make the reserve open to the public.
+Culture: It would be a great place to go for a walk and see the sights.
+Culture: Having nature integrated within spaces of the city is proven to improve quality of life within it.
+Society: If the space is large enough we could even monetize the area, like they do in some national parks. 
+Society: Such a place must have a large upkeep cost that would help with.
+Culture: I think monetizing such an area would deter people from enjoying such a space.
+Nature: Your ideas are all totally against the point. 
+Nature: People would leave their trash everywhere and scare away half the biodiversity that such a reserve would normally attract.
+Nature: What do you think, because these two clearly don’t see the value of nature for nature.
+-> Player: We should make the nature reserve open to the public.
+    //delete asset <instantiate asset>
+-> Player: We should make the reserve open to the public and monetize it.
+    //delete asset <instantiate asset>
+-> Player: The nature reserve should stay exclusive to nature itself.
+    //delete asset <instantiate asset>
+//<<set $MadeChoice to true>>
+===
