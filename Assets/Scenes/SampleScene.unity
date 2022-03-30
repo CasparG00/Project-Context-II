@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368bb86cff0bc8041a4e727a9e24298c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineView: {fileID: 0}
+  lineView: {fileID: 7778558436377834186}
 --- !u!1 &1164225397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 3292657647204779837}
-  optionViewPrefab: {fileID: 5665317717604146022, guid: 3ff4e0d87ab7d4789a1565ac303e8261, type: 3}
+  optionViewPrefab: {fileID: 2313158182473051331, guid: 7d2ac814229a65343a3ee5acfc480f13, type: 3}
   lastLineText: {fileID: 3292657646705421138}
   fadeTime: 0.1
   showUnavailableOptions: 0
