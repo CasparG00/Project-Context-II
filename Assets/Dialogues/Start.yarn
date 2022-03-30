@@ -130,3 +130,53 @@ Culture: maybe even play sports together or enjoy a bit of nature.
     Culture: It isn't, but you do you.
 <<set $talkedToCulture to true>>
 ===
+
+title: SocietyChoice
+---
+Player: Good afternoon everyone.
+Player: I gathered you all to give each of you the opportunity to share your ideas about the vertical farm we will be building on Greenstreet.
+Player: There might be options to change the vertical farm concept for the better. 
+Player: Let’s start with Nature. What do you think?
+Nature: We should use this concept called agroforestry.
+Nature: Its where you take a bunch of trees, other fauna and animals and all raise them in the same location.
+Nature: It is amazing dude.
+Nature: It gives the chickens a natural way to grow of the already grown fauna. The trees reduce CO2 from the area and gives the animals their shelter.
+Nature: We could use like the ground floor of the farm for a bunch of chickens dude. 
+Nature: Doesn’t that sound awesome, all those chickens walking around the place.
+Society: You want to bring chickens into a highly controlled farming facility? That sounds like it would lower production rates. 
+Society: Although it would give all these things a singular location to grow instead of its normal three. 
+Society: No need to ship waste producing animal feed.
+Nature: exactly dude!
+-> Player: Agroforestry, I have never looked into this concept but it sounds wonderful.
+-> Player: I’m not sure if this agroforestry concept would work within the vertical farm.
+-> Player: These chickens sound like a waste of good vertical farming space!
+Player: What are your ideas culture? With been talking about this other concept long enough.
+Culture: I think we should create an indoor communal garden on the middle floor of the farm. 
+Culture: I know it would take up vital production space but hear me out. 
+Culture: Picture this: You are standing in this lovely lushes exotic garden in the center of this high rise building.
+Culture: You can look through the glass panel walls down the side towards the amazing technology that provides our citizens with food.
+Culture: It would raise awareness and start discussion about how many sustainable faming options there are for the people. 
+Culture: We could even put up signs that explain information about the different farming options out there. Like the agroforestry Nature mentioned. 
+Nature: We should let some chickens into your communal garden. 
+Society: You joke nature, but this idea would actually help in increasing the amount of people who would fund a second vertical farm. 
+Society: It does however have the same problem as the agroforestry idea.
+-> Player: I also like the communal garden idea.
+-> Player: I don’t really know if this would be the right option within the farm.
+-> Player: This sound highly unnecessary.
+Player: Society, what do you think about all the input so far?
+Society: All of your ideas have their advantages. 
+Society: I am not a fan of chickens within the farm but Nature did have some great points. 
+Society: I also like the communal garden, however all these ideas including mine have the same problem.
+Society: Not using one floor for production would be decrease production. Which means 300.000 less mouths we can feed. I don’t think these ideas are worth that.
+Society: We should invest some space of the farm into furthering the technology.
+Society: A space where we could test out different methods that aren’t meant for production. 
+Society: This would decrease production at the start, but it could proof beneficial in the future. Produce less now so we can feed more people in the long run.
+Player: Alright we have discussed long enough. I will take all your opinions into account and will make a decision in a minute.  
+-> Player: I will choose the agroforestry within the farm.
+    //delete asset <instantiate asset>
+-> Player: I will choose the communal garden within the farm.
+    //delete asset <instantiate asset>
+-> Player: I will choose to focus on technological advancement within the farm.
+    //delete asset <instantiate asset>
+//<<set $MadeChoice to true>>
+===
