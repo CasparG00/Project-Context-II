@@ -32,7 +32,7 @@ public class DialogueBubbleBehaviour : MonoBehaviour
             {
                 if (npc.speakerName == speakerNameProvider.text)
                 {
-                    dialogueBubble.transform.position = Camera.main.WorldToScreenPoint(npc.GetBubbleAnchor().position);
+                    //dialogueBubble.transform.position = Camera.main.WorldToScreenPoint(npc.GetBubbleAnchor().position);
                     break;
                 }
             }
