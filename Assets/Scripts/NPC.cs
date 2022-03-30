@@ -6,6 +6,7 @@ public class NPC : MonoBehaviour
 {
     [Header("Required NPC Data")]
     public string speakerName;
+    [Tooltip("The dialogue of this NPC will break if this is not set correctly.")]
     [SerializeField] private string conversationStartNode;
     private DialogueRunner dialogueRunner;
     

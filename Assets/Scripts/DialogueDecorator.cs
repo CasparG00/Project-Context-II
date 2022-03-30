@@ -6,11 +6,13 @@ using Yarn.Unity;
 public class DialogueDecorator : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI speakerNameProvider;
+    [Tooltip("Hands off!")]
+    [SerializeField] private Image uiImage;
     [SerializeField] private float fadeSpeed = 10;
     
     [SerializeField] private TextMeshProUGUI[] influencedTextComponents;
+    [Tooltip("Don't change this or it will break :(")]
     [SerializeField] private Image backgroundImageComponent;
-    private Image uiImage;
     private DialogueRunner dialogueRunner;
 
     private Color targetColor;
@@ -18,7 +20,6 @@ public class DialogueDecorator : MonoBehaviour
 
     private void Start()
     {
-        uiImage = GetComponent<Image>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
         baseBackgroundImageColor = backgroundImageComponent.color;
     }
