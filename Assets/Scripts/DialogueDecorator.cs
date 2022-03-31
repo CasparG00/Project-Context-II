@@ -19,6 +19,7 @@ public class DialogueDecorator : MonoBehaviour
     [SerializeField] private TMP_FontAsset playerFont;
     [SerializeField] private Color playerTextColor;
     [SerializeField] private Color playerBackgroundColor;
+    [SerializeField] private int playerFontSize;
 
     private Color targetColor;
 
@@ -47,7 +48,7 @@ public class DialogueDecorator : MonoBehaviour
             {
                 targetColor = new Color(1, 1, 1, 0);
                 backgroundImageComponent.color = playerBackgroundColor;
-                SetStyleOnTextComponents(influencedTextComponents, playerFont, playerTextColor);
+                SetStyleOnTextComponents(influencedTextComponents, playerFont, playerTextColor, playerFontSize);
             }
             else
             {
@@ -65,7 +66,7 @@ public class DialogueDecorator : MonoBehaviour
                         targetColor = new Color(1, 1, 1, 0);
                     }
                     
-                    SetStyleOnTextComponents(influencedTextComponents, npc.font, npc.textColor);
+                    SetStyleOnTextComponents(influencedTextComponents, npc.font, npc.textColor, npc.fontSize);
                     
                     backgroundImageComponent.color = npc.backgroundColor;
                     break;
@@ -78,13 +79,14 @@ public class DialogueDecorator : MonoBehaviour
         }
     }
 
-    private void SetStyleOnTextComponents(TextMeshProUGUI[] textComponents, TMP_FontAsset font, Color textColor)
+    private void SetStyleOnTextComponents(TextMeshProUGUI[] textComponents, TMP_FontAsset font, Color textColor, int fontSize)
     {
         if (!font) return;
         foreach (var component in textComponents)
         {
             component.font = font;
             component.color = textColor;
+            component.fontSize = fontSize;
         }
     }
 }

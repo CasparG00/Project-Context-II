@@ -190,11 +190,23 @@ Quinn: A space where we could test out different methods that aren't meant for p
 Quinn: This would decrease production at the start, but it could proof beneficial in the future. Produce less now so we can feed more people in the long run.
 Player: Alright we have discussed long enough. I will take all your opinions into account and will make a decision in a minute.  
 -> Player: I will choose the agroforestry within the farm.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject NatureAgroForest>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: I will choose the communal garden within the farm.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject CultureGarden>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: I will choose to focus on technological advancement within the farm.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject SocietyVerticalFarm>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 <<set $MadeChoice to true>>
 ===
 
@@ -224,11 +236,23 @@ Leo: Your ideas are all totally against the point.
 Leo: People would leave their trash everywhere and scare away half the biodiversity that such a reserve would normally attract.
 Leo: What do you think, because these two clearly don't see the value of nature for nature.
 -> Player: We should make the nature reserve open to the public.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject CultureOpenReserve>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: We should make the reserve open to the public and monetize it.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject SocietyMonetizedReserve>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: The nature reserve should stay exclusive to nature itself.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject NatureForest>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 <<set $MadeChoice to true>>
 ===
 
@@ -259,10 +283,22 @@ Shana: It is a communal area.
 Shana: You could have tables set up with chessboards, areas for sports, art or even entire waterfalls that make use of the city river.
 Shana: I think we should invest more in the public of this public park.
 -> Player: I agree, we should focus on the communal aspect of this public park.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject CulturePark>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: Making it a nature reserve should serve multiple purposes. let's do that.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject NatureReserve>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 -> Player: These supertrees sounds useful let's incorporate those.
+    <<FadeCamera FadeTarget false>>
+    <<wait 5>>
     <<SetSprite RenovationProject SocietyParkWithinTrees>>
+    <<FadeCamera FadeTarget true>>
+    <<wait 3>>
 <<set $MadeChoice to true>>
 ===

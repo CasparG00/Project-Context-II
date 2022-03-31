@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     public Sprite dialogueSprite;
     public Color backgroundColor;
     public TMP_FontAsset font;
+    public int fontSize;
     public Color textColor = Color.white;
 
     private void Start()
