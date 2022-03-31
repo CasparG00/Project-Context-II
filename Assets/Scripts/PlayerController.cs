@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
     private float input;
 
     private DialogueRunner dialogueRunner;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
 
@@ -27,5 +31,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+
+        var velocity = rb.velocity;
+        spriteRenderer.flipX = velocity.x > 0;
+        animator.SetFloat("moveSpeed", velocity.sqrMagnitude);
     }
 }
