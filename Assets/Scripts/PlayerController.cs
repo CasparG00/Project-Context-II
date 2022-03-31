@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        spriteRenderer.flipX = rb.velocity.x > 0;
-        animator.SetFloat("moveSpeed", rb.velocity.sqrMagnitude);
+        var velocity = rb.velocity;
+        spriteRenderer.flipX = velocity.x > 0;
+        animator.SetFloat("moveSpeed", velocity.sqrMagnitude);
     }
 }

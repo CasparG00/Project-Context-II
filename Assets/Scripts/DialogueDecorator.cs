@@ -15,6 +15,10 @@ public class DialogueDecorator : MonoBehaviour
     [SerializeField] private Image backgroundImageComponent;
     private DialogueRunner dialogueRunner;
 
+    [Header("Player Style Settings")]
+    [SerializeField] private TMP_FontAsset playerFont;
+    [SerializeField] private Color playerTextColor;
+
     private Color targetColor;
     private Color baseBackgroundImageColor;
 
@@ -26,7 +30,14 @@ public class DialogueDecorator : MonoBehaviour
 
     private void LateUpdate()
     {
-        uiImage.color = Color.Lerp(uiImage.color, targetColor, Time.deltaTime * fadeSpeed);
+        if (Mathf.Abs(targetColor.a - uiImage.color.a) > 0.05f)
+        {
+            uiImage.color = Color.Lerp(uiImage.color, targetColor, Time.deltaTime * fadeSpeed);
+        }
+        else
+        {
+            uiImage.color = targetColor;
+        }
     }
     
     private void FixedUpdate()
@@ -35,7 +46,8 @@ public class DialogueDecorator : MonoBehaviour
         {
             if (speakerNameProvider.text == "Player")
             {
-                uiImage.color = new Color(1, 1, 1, 0);
+                targetColor = new Color(1, 1, 1, 0);
+                SetStyleOnTextComponents(influencedTextComponents, playerFont, playerTextColor);
             }
             else
             {
