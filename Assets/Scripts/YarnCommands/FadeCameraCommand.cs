@@ -6,20 +6,22 @@ using Yarn.Unity;
 public class FadeCameraCommand : MonoBehaviour
 {
     [SerializeField] private float fadeSpeed = 1;
+    [SerializeField] private Color baseColor;
+    [SerializeField] private Color sameButTransparent;
     private Image image;
     private bool isFading;
 
     private void Awake()
     {
         image = GetComponent<Image>();
-        image.color = new Color(0, 0, 0, 0);
+        image.color = baseColor;
     }
 
     [YarnCommand("FadeCamera")]
     public void FadeCamera(bool fadeIn)
     {
         if (isFading) return;
-        StartCoroutine(LerpColor(fadeIn ? new Color(0,0,0,0) : Color.black, fadeSpeed));
+        StartCoroutine(LerpColor(fadeIn ? sameButTransparent : baseColor, fadeSpeed));
     }
     
     private IEnumerator LerpColor(Color endValue, float duration)

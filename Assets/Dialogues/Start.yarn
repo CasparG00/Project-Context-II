@@ -1,5 +1,8 @@
 ﻿title: Start
 ---
+<<wait 2>>
+<<FadeCamera FadeTarget true>>
+<<wait 4>>
 Secretary: Erik has just informed us that the public is pushing for a change of the city block on Greenstreet.
 Secretary: The building company has checked the foundation of the housing there,
 Secretary: and agreed that we should start from scratch.
@@ -371,6 +374,8 @@ title: LeoEnding
 Leo: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
 Player: Yes it's amazing, and this is only the beginning!
 <<FadeCamera FadeTarget false>>
+<<wait 3>>
+<<SetActive EndCard true>>
 ===
 
 title: QuinnEnding
@@ -378,6 +383,8 @@ title: QuinnEnding
 Quinn: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
 Player: Yes it's amazing, and this is only the beginning!
 <<FadeCamera FadeTarget false>>
+<<wait 3>>
+<<SetActive EndCard true>>
 ===
 
 title: ShanaEnding
@@ -385,4 +392,6 @@ title: ShanaEnding
 Shana: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
 Player: Yes it's amazing, and this is only the beginning!
 <<FadeCamera FadeTarget false>>
+<<wait 3>>
+<<SetActive EndCard true>>
 ===
