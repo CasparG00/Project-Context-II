@@ -179,7 +179,6 @@ Player: Alright we have discussed long enough. I will take all your opinions int
 -> Player: I will choose to focus on technological advancement within the farm.
     //delete asset <instantiate asset>
 //<<set $MadeChoice to true>>
-<<<<<<< Updated upstream
 ===
 
 Title: NatureChoice
@@ -208,6 +207,4 @@ Nature: What do you think, because these two clearly don’t see the value of na
 -> Player: The nature reserve should stay exclusive to nature itself.
     //delete asset <instantiate asset>
 //<<set $MadeChoice to true>>
-=======
->>>>>>> Stashed changes
 ===
