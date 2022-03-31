@@ -148,6 +148,7 @@ title: SocietyChoice
 <<wait 5>>
 <<SetActive Npc_Part_1 false>>
 <<SetActive Npc_Part_2 true>>
+<<Move Player PlayerDeskPoint>>
 <<FadeCamera FadeTarget true>>
 <<wait 3>>
 Player: Good afternoon everyone.
@@ -190,24 +191,44 @@ Quinn: A space where we could test out different methods that aren't meant for p
 Quinn: This would decrease production at the start, but it could proof beneficial in the future. Produce less now so we can feed more people in the long run.
 Player: Alright we have discussed long enough. I will take all your opinions into account and will make a decision in a minute.  
 -> Player: I will choose the agroforestry within the farm.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject NatureAgroForest>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive LeoEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump LeoEnding>>
 -> Player: I will choose the communal garden within the farm.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject CultureGarden>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive ShanaEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump ShanaEnding>>
 -> Player: I will choose to focus on technological advancement within the farm.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject SocietyVerticalFarm>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive QuinnEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
-<<set $MadeChoice to true>>
+    <<jump QuinnEnding>>
 ===
 
 title: NatureChoice
@@ -216,6 +237,7 @@ title: NatureChoice
 <<wait 5>>
 <<SetActive Npc_Part_1 false>>
 <<SetActive Npc_Part_2 true>>
+<<Move Player PlayerDeskPoint>>
 <<FadeCamera FadeTarget true>>
 <<wait 3>>
 Player: Good afternoon everyone.
@@ -236,24 +258,44 @@ Leo: Your ideas are all totally against the point.
 Leo: People would leave their trash everywhere and scare away half the biodiversity that such a reserve would normally attract.
 Leo: What do you think, because these two clearly don't see the value of nature for nature.
 -> Player: We should make the nature reserve open to the public.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject CultureOpenReserve>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive ShanaEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump ShanaEnding>>
 -> Player: We should make the reserve open to the public and monetize it.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject SocietyMonetizedReserve>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive QuinnEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump QuinnEnding>>
 -> Player: The nature reserve should stay exclusive to nature itself.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject NatureForest>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive LeoEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
-<<set $MadeChoice to true>>
+    <<jump LeoEnding>>
 ===
 
 title: CultureChoice
@@ -262,6 +304,7 @@ title: CultureChoice
 <<wait 5>>
 <<SetActive Npc_Part_1 false>>
 <<SetActive Npc_Part_2 true>>
+<<Move Player PlayerDeskPoint>>
 <<FadeCamera FadeTarget true>>
 <<wait 3>>
 Player: Good afternoon everyone.
@@ -283,22 +326,63 @@ Shana: It is a communal area.
 Shana: You could have tables set up with chessboards, areas for sports, art or even entire waterfalls that make use of the city river.
 Shana: I think we should invest more in the public of this public park.
 -> Player: I agree, we should focus on the communal aspect of this public park.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject CulturePark>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive ShanaEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump ShanaEnding>>
 -> Player: Making it a nature reserve should serve multiple purposes. let's do that.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject NatureReserve>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive LeoEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
+    <<jump LeoEnding>>
 -> Player: These supertrees sounds useful let's incorporate those.
+    Player: Alright, I will inform Erik about our plan!
     <<FadeCamera FadeTarget false>>
     <<wait 5>>
+    <<Move Player PlayerEndPoint>>
     <<SetSprite RenovationProject SocietyParkWithinTrees>>
+    <<SetActive Npc_Part_2 false>>
+    <<SetActive QuinnEndPoint true>>
+    <<SetActive EndCam true>>
+    <<SetActive GameplayCam false>>
     <<FadeCamera FadeTarget true>>
     <<wait 3>>
-<<set $MadeChoice to true>>
+    <<jump QuinnEnding>>
+===
+
+title: LeoEnding
+---
+Leo: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
+Player: Yes it's amazing, and this is only the beginning!
+<<FadeCamera FadeTarget false>>
+===
+
+title: QuinnEnding
+---
+Quinn: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
+Player: Yes it's amazing, and this is only the beginning!
+<<FadeCamera FadeTarget false>>
+===
+
+title: ShanaEnding
+---
+Shana: It is pretty cool huh?!? That we can look outside the window and see what we have built. 
+Player: Yes it's amazing, and this is only the beginning!
+<<FadeCamera FadeTarget false>>
 ===
