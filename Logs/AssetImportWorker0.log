@@ -144,4 +144,3 @@ Received Import Request.
 Start importing Assets/Dialogues/IPBESProject.yarnproject using Guid(3e942d278c0494b428c628d27ca028a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47492da443777d41e087700323351409') in 0.007903 seconds 
   Import took 0.013218 seconds .
 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
