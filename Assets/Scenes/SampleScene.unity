@@ -1346,7 +1346,7 @@ MonoBehaviour:
   conversationStartNode: Culture
   dialogueSprite: {fileID: 21300000, guid: 8da0c17916a495f4aa350c64bd4136f8, type: 3}
   backgroundSprite: {fileID: 0}
-  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  font: {fileID: 11400000, guid: 4e730521dda96124987c0ea95ac7ddbe, type: 2}
   textColor: {r: 0, g: 0.3647059, b: 0.8196079, a: 1}
 --- !u!1 &780212888
 GameObject:
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   conversationStartNode: Society
   dialogueSprite: {fileID: 21300000, guid: df0f1d0fa6fc8314a8e922a049ed9b2a, type: 3}
   backgroundSprite: {fileID: 0}
-  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  font: {fileID: 11400000, guid: 1226053431b125b4fa62821f19fbc7ab, type: 2}
   textColor: {r: 0.93725497, g: 0.8117648, b: 0.83921576, a: 1}
 --- !u!61 &890056562
 BoxCollider2D:
@@ -2412,7 +2412,7 @@ MonoBehaviour:
   conversationStartNode: Nature
   dialogueSprite: {fileID: 21300000, guid: 804061586ecb0e0468c1c47ffbb07416, type: 3}
   backgroundSprite: {fileID: 0}
-  font: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  font: {fileID: 11400000, guid: 69303d100ce979946a590c297f8784b7, type: 2}
   textColor: {r: 0.37647063, g: 0.4431373, b: 0.30980393, a: 1}
 --- !u!61 &1604978671
 BoxCollider2D:
