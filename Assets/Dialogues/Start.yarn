@@ -16,38 +16,48 @@ title: Secretary
 Secretary: Have you made up your mind?
 -> Player: No, I should think it over some more.
 -> Player: Yes, I know what to do with the city block!
+    -> Player: Society Had a pretty good plan!
+        Player: Let's get everyone together...
+        <<jump SocietyChoice>>
+    -> Player: Nature seemed to have a good idea.
+        Player: Let's get everyone together...
+        <<jump NatureChoice>>
+    -> Player: Culture probably has the better plan of the three.
+        Player: Let's get everyone together...
+        <<jump CultureChoice>>
 ===
 
 title: Society
 ---
 <<if $talkedToSociety == true>>
-    Society: Welcome back, do you want to hear about my plan again?
+    Quinn: Welcome back, do you want to hear about my plan again?
     -> Player: Do tell, we don't have much time to decide.
-        Society: Of course! Here is my plan...
+        Quinn: Of course! Here is my plan...
         <<jump SocietyPlan>>
     -> Player: No thanks.
         Player: No thanks, I still know what your plan is!
 <<else>>
-Player: Hello Society, have you got a minute?
+Player: Hello Quinn, have you got a minute?
 -> Player: Have you heard of the block on Greenstreet?
-    Society: Yes, I've heard from Secretary.
+    Quinn: Yes, I've heard from Secretary.
     Player: They want us to start from scratch.
-    Society: I know exactly what we should do with it.
+    Player: You're a Society expert I bet you know what to do with that space.
+    Quinn: yes, I know exactly what we should do with it.
     -> Player: Do tell, we don't have much time to decide.
         <<jump SocietyPlan>>
-    -> Player: I should listen to the others first, I will see you in a bit.
+    -> Player: I should listen to Leo and Shana first, I will see you in a bit.
 -> Player: Nevermind.
 <<endif>>
 ===
 
 title: SocietyPlan
 ---
-Society: We should invest in one of those vertical farms they are developing at Columbia university.
-Society: It produces the yield of 700 acres of farmland in the size of a big retail store.
-Society: The benefits are endless!
-Society: It saves water, it uses no pesticides and it can produce 365 days a year!
-Society: It is a very expensive investment though...
-Society: A new vertical farm can cost up to 100 million dollars, however the investment basically pays for itself over time.
+Quinn: We should invest in one of those vertical farms they are developing at Columbia university.
+Quinn: It produces the yield of 700 acres of farmland in the size of a big retail store.
+Quinn: The benefits are endless!
+Quinn: It saves water, it uses no pesticides and it can produce 365 days a year!
+Quinn: It is a very expensive investment though...
+Quinn: A new vertical farm can cost up to 100 million euros, however the investment basically pays for itself over time.
 -> Player: That sounds like a great idea!
 -> Player: Hmm... I'm not really sure if that's what's best.
 -> Player: That's crazy! 100 million, That is way too expensive!
@@ -56,155 +66,203 @@ Society: A new vertical farm can cost up to 100 million dollars, however the inv
 
 title: Nature
 ---
-Player: Hey Nature, can I talk to you for a sec?
+Player: Hey Leo, can I talk to you for a sec?
 -> Did they already notify you about Greenstreet? We can basically decide what to do with it. <<if $talkedToNature == false>>
-    Nature: Yeah dude, Amazing right. I know what we should do with it.
-    -> Player: So what do you think we should do with it then?
+    Leo: Yeah dude, Amazing right. I know what we should do with it.
+    -> Player: So as our Nature Expert what do you think we should do with it then?
         <<jump NaturePlan>>
-    -> Player: Wait, I should listen to the others first.
-        Nature: See you in a bit, my man.
+    -> Player: Wait, I should listen to the Quinn and Shana first.
+        Leo: See you in a bit, my man.
 -> Player: Could you tell me about your plan again? <<if $talkedToNature == true>>
-    Nature: Sure! Here's the deal, my man...
+    Leo: Sure! Here's the deal, my man...
     <<jump NaturePlan>>
 -> Player: Oh nevermind, I need to speak with someone else first.
-    Nature: See you in a bit, my man.
+    Leo: See you in a bit, my man.
 ===
 
 title: NaturePlan
 ---
-Nature: We should just fill it with nature man.
-Nature: Like giving a bit of the city back to her.
-Nature: Plant hundreds of trees and make it accessible for all the animals.
-Nature: Give nature its space.
+Leo: We should just fill it with nature man.
+Leo: Like giving a bit of the city back to her.
+Leo: Plant hundreds of trees and make it accessible for all the animals.
+Leo: Give nature its space.
 -> Player: That sounds like a great idea.
-    Nature: Thanks my man!
+    Leo: Thanks my man!
 -> Player: How is that going to help the city?
-    Nature: Why should we always help the city? We should help nature for once.
-    Nature: But if you really want to know; all those trees and plants will reduce city pollution.
-    Nature: It would absorb tons of CO2, man.
-    Nature: It will also decrease the air temperature and improve the air,
-    Nature: but more importantly it would give the animals a place to return and live peacefully.
+    Leo: Why should we always help the city? We should help nature for once.
+    Leo: But if you really want to know; all those trees and plants will reduce city pollution.
+    Leo: It would absorb tons of CO2, man.
+    Leo: It will also decrease the air temperature and improve the air,
+    Leo: but more importantly it would give the animals a place to return and live peacefully.
 -> Player: That sounds ridiculous. <<if $talkedToNature == false>>
-    Nature: It's not ridiculous, it's different.
+    Leo: It's not ridiculous, it's different.
 -> Player: That still sounds ridiculous. <<if $talkedToNature == true>>
-    Nature: It's not ridiculous, it's different.
+    Leo: It's not ridiculous, it's different.
 <<set $talkedToNature to true>>
 ===
 
 title: Culture
 ---
-Player: Hey Culture, have you got a moment?
+Player: Hey Shana, have you got a moment?
 -> Player: Did they notify you about the free block on Greenstreet? <<if $talkedToCulture == false>>
     Player: We can do anything with it.
-    Culture: Yes I've heard. That sounds exciting doesn't it?
-    Culture: We could finally make a space that the people want.
+    Shana: Yes I've heard. That sounds exciting doesn't it?
+    Player: So as our Culture Expert what do you think we should do with the space?
+    Shana: We could finally make a space that the people want.
     -> Player: And what do the people want?
         <<jump CulturePlan>>
-    -> Player: Oh sorry, I should listen to the other ideas first.
-        Culture: Okay, but you better speak with me soon.
-        Culture: I'm the one with the ideas that are actually good.
+    -> Player: Oh sorry, I should listen to Leo and Quinn first.
+        Shana: Okay, but you better speak with me soon.
+        Shana: I'm the one with the ideas that are actually good.
 -> Player: So what was that plan you had again? <<if $talkedToCulture == true>>
-    Culture: Ah, so you ARE interested after all!
-    Culture: So, here's the plan...
+    Shana: Ah, so you ARE interested after all!
+    Shana: So, here's the plan...
     <<jump CulturePlan>>
 -> Player: Oh sorry, I should speak with someone else first.
-    Culture: Okay, but you better speak with me soon.
-    Culture: I'm the one with the ideas that are actually good.
+    Shana: Okay, but you better speak with me soon.
+    Shana: I'm the one with the ideas that are actually good.
 ===
 
 title: CulturePlan
 ---
-Culture: We should make it a public park.
-Culture: A place where people can hang out and relax,
-Culture: maybe even play sports together or enjoy a bit of nature.
+Shana: We should make it a public park.
+Shana: A place where people can hang out and relax,
+Shana: maybe even play sports together or enjoy a bit of nature.
 -> Player: That sounds like a good idea.
-    Culture: Thank you!
+    Shana: Thank you!
 -> Don't we already have some of those? How is that going to help?
-    Culture: These public areas shape the community ties in neighborhoods.
-    Culture: It is very important that we have them available around the city for everyone.
-    Culture: These areas also serve as blending areas for the urban environment.
-    Culture: Places like this give the people a better perception of the public space.
-    Culture: It is also proven that neighborhoods with these types of public spaces have a lower crime rate.
-    Culture: See how I added that in there since I know you like your facts?!
+    Shana: These public areas shape the community ties in neighborhoods.
+    Shana: It is very important that we have them available around the city for everyone.
+    Shana: These areas also serve as blending areas for the urban environment.
+    Shana: Places like this give the people a better perception of the public space.
+    Shana: It is also proven that neighborhoods with these types of public spaces have a lower crime rate.
+    Shana: See how I added that in there since I know you like your facts?!
 -> That sounds like a waste of space.
-    Culture: It isn't, but you do you.
+    Shana: It isn't, but you do you.
 <<set $talkedToCulture to true>>
 ===
 
 title: SocietyChoice
 ---
+<<FadeCamera FadeTarget false>>
+<<wait 5>>
+<<SetActive Npc_Part_1 false>>
+<<SetActive Npc_Part_2 true>>
+<<FadeCamera FadeTarget true>>
+<<wait 3>>
 Player: Good afternoon everyone.
 Player: I gathered you all to give each of you the opportunity to share your ideas about the vertical farm we will be building on Greenstreet.
 Player: There might be options to change the vertical farm concept for the better. 
-Player: Let’s start with Nature. What do you think?
-Nature: We should use this concept called agroforestry.
-Nature: Its where you take a bunch of trees, other fauna and animals and all raise them in the same location.
-Nature: It is amazing dude.
-Nature: It gives the chickens a natural way to grow of the already grown fauna. The trees reduce CO2 from the area and gives the animals their shelter.
-Nature: We could use like the ground floor of the farm for a bunch of chickens dude. 
-Nature: Doesn’t that sound awesome, all those chickens walking around the place.
-Society: You want to bring chickens into a highly controlled farming facility? That sounds like it would lower production rates. 
-Society: Although it would give all these things a singular location to grow instead of its normal three. 
-Society: No need to ship waste producing animal feed.
-Nature: exactly dude!
+Player: Let's start with Leo. What do you think?
+Leo: We should use this concept called agroforestry.
+Leo: Its where you take a bunch of trees, other fauna and animals and all raise them in the same location.
+Leo: It is amazing dude.
+Leo: It gives the chickens a natural way to grow of the already grown fauna. The trees reduce CO2 from the area and gives the animals their shelter.
+Leo: We could use like the ground floor of the farm for a bunch of chickens dude. 
+Leo: Doesn't that sound awesome, all those chickens walking around the place.
+Quinn: You want to bring chickens into a highly controlled farming facility? That sounds like it would lower production rates. 
+Quinn: Although it would give all these things a singular location to grow instead of its normal three. 
+Quinn: No need to ship waste producing animal feed.
+Leo: exactly dude!
 -> Player: Agroforestry, I have never looked into this concept but it sounds wonderful.
--> Player: I’m not sure if this agroforestry concept would work within the vertical farm.
+-> Player: I'm not sure if this agroforestry concept would work within the vertical farm.
 -> Player: These chickens sound like a waste of good vertical farming space!
-Player: What are your ideas culture? With been talking about this other concept long enough.
-Culture: I think we should create an indoor communal garden on the middle floor of the farm. 
-Culture: I know it would take up vital production space but hear me out. 
-Culture: Picture this: You are standing in this lovely lushes exotic garden in the center of this high rise building.
-Culture: You can look through the glass panel walls down the side towards the amazing technology that provides our citizens with food.
-Culture: It would raise awareness and start discussion about how many sustainable faming options there are for the people. 
-Culture: We could even put up signs that explain information about the different farming options out there. Like the agroforestry Nature mentioned. 
-Nature: We should let some chickens into your communal garden. 
-Society: You joke nature, but this idea would actually help in increasing the amount of people who would fund a second vertical farm. 
-Society: It does however have the same problem as the agroforestry idea.
+Player: What are your ideas Shana? With been talking about this other concept long enough.
+Shana: I think we should create an indoor communal garden on the middle floor of the farm. 
+Shana: I know it would take up vital production space but hear me out. 
+Shana: Picture this: You are standing in this lovely lushes exotic garden in the center of this high rise building.
+Shana: You can look through the glass panel walls down the side towards the amazing technology that provides our citizens with food.
+Shana: It would raise awareness and start discussion about how many sustainable faming options there are for the people. 
+Shana: We could even put up signs that explain information about the different farming options out there. Like the agroforestry Leo mentioned. 
+Leo: We should let some chickens into your communal garden. 
+Quinn: You joke Leo, but this idea would actually help in increasing the amount of people who would fund a second vertical farm. 
+Quinn: It does however have the same problem as the agroforestry idea.
 -> Player: I also like the communal garden idea.
--> Player: I don’t really know if this would be the right option within the farm.
+-> Player: I don't really know if this would be the right option within the farm.
 -> Player: This sound highly unnecessary.
-Player: Society, what do you think about all the input so far?
-Society: All of your ideas have their advantages. 
-Society: I am not a fan of chickens within the farm but Nature did have some great points. 
-Society: I also like the communal garden, however all these ideas including mine have the same problem.
-Society: Not using one floor for production would be decrease production. Which means 300.000 less mouths we can feed. I don’t think these ideas are worth that.
-Society: We should invest some space of the farm into furthering the technology.
-Society: A space where we could test out different methods that aren’t meant for production. 
-Society: This would decrease production at the start, but it could proof beneficial in the future. Produce less now so we can feed more people in the long run.
+Player: Quinn, what do you think about all the input so far?
+Quinn: All of your ideas have their advantages. 
+Quinn: I am not a fan of chickens within the farm but Leo did have some great points. 
+Quinn: I also like the communal garden, however all these ideas including mine have the same problem.
+Quinn: Not using one floor for production would be decrease production. Which means 300.000 less mouths we can feed. I don’t think these ideas are worth that.
+Quinn: We should invest some space of the farm into furthering the technology.
+Quinn: A space where we could test out different methods that aren't meant for production. 
+Quinn: This would decrease production at the start, but it could proof beneficial in the future. Produce less now so we can feed more people in the long run.
 Player: Alright we have discussed long enough. I will take all your opinions into account and will make a decision in a minute.  
 -> Player: I will choose the agroforestry within the farm.
-    //delete asset <instantiate asset>
+    <<SetSprite RenovationProject NatureAgroForest>>
 -> Player: I will choose the communal garden within the farm.
-    //delete asset <instantiate asset>
+    <<SetSprite RenovationProject CultureGarden>>
 -> Player: I will choose to focus on technological advancement within the farm.
-    //delete asset <instantiate asset>
-//<<set $MadeChoice to true>>
+    <<SetSprite RenovationProject SocietyVerticalFarm>>
+<<set $MadeChoice to true>>
 ===
 
-Title: NatureChoice
+title: NatureChoice
 ---
+<<FadeCamera FadeTarget false>>
+<<wait 5>>
+<<SetActive Npc_Part_1 false>>
+<<SetActive Npc_Part_2 true>>
+<<FadeCamera FadeTarget true>>
+<<wait 3>>
 Player: Good afternoon everyone.
 Player: I gathered you all to give each of you the opportunity to share your ideas about the nature reserve we will be building on Greenstreet.
 Player: There might be options to change the nature reserve concept for the better. 
-Player: Let’s start with Society. What do you think?
-Society: I don’t really see the point of using valuable city space to build a nature reserve.
-Nature: It would absorb CO2 and improve air quality, and there totally is a point Society, only this time it is for the flora and fauna not us.
-Nature: It is about time we put nature first and humanity second. 
-Society: Yeah, I am not sure I agree with you on that one.
-Culture: We should make the reserve open to the public.
-Culture: It would be a great place to go for a walk and see the sights.
-Culture: Having nature integrated within spaces of the city is proven to improve quality of life within it.
-Society: If the space is large enough we could even monetize the area, like they do in some national parks. 
-Society: Such a place must have a large upkeep cost that would help with.
-Culture: I think monetizing such an area would deter people from enjoying such a space.
-Nature: Your ideas are all totally against the point. 
-Nature: People would leave their trash everywhere and scare away half the biodiversity that such a reserve would normally attract.
-Nature: What do you think, because these two clearly don’t see the value of nature for nature.
+Player: Let's start with Quinn. What do you think?
+Quinn: I don't really see the point of using valuable city space to build a nature reserve.
+Leo: It would absorb CO2 and improve air quality, and there totally is a point Quinn, only this time it is for the flora and fauna not us.
+Leo: It is about time we put nature first and humanity second. 
+Quinn: Yeah, I am not sure I agree with you on that one.
+Shana: We should make the reserve open to the public.
+Shana: It would be a great place to go for a walk and see the sights.
+Shana: Having nature integrated within spaces of the city is proven to improve quality of life within it.
+Quinn: If the space is large enough we could even monetize the area, like they do in some national parks. 
+Quinn: Such a place must have a large upkeep cost that would help with.
+Shana: I think monetizing such an area would deter people from enjoying such a space.
+Leo: Your ideas are all totally against the point. 
+Leo: People would leave their trash everywhere and scare away half the biodiversity that such a reserve would normally attract.
+Leo: What do you think, because these two clearly don't see the value of nature for nature.
 -> Player: We should make the nature reserve open to the public.
-    //delete asset <instantiate asset>
+    <<SetSprite RenovationProject CultureOpenReserve>>
 -> Player: We should make the reserve open to the public and monetize it.
-    //delete asset <instantiate asset>
+    <<SetSprite RenovationProject SocietyMonetizedReserve>>
 -> Player: The nature reserve should stay exclusive to nature itself.
-    //delete asset <instantiate asset>
-//<<set $MadeChoice to true>>
+    <<SetSprite RenovationProject NatureForest>>
+<<set $MadeChoice to true>>
+===
+
+title: CultureChoice
+---
+<<FadeCamera FadeTarget false>>
+<<wait 5>>
+<<SetActive Npc_Part_1 false>>
+<<SetActive Npc_Part_2 true>>
+<<FadeCamera FadeTarget true>>
+<<wait 3>>
+Player: Good afternoon everyone.
+Player: I gathered you all to give each of you the opportunity to share your ideas about the public park we will be building on Greenstreet.
+Player: There might be options to change the public park concept for the better. 
+Player: Let's start with Leo. What do you think?
+Leo: I think we should lean it more towards a reserve than a public park. 
+Leo: People can still enjoy a nature reserve for most of the same reasons you would go to a park, but it will also come with great benefit to city wildlife.
+Leo: It attracts more biodiversity than a park and for some reason people leave less trash in when there is a sign that says nature reserve instead of park even though you shouldn’t litter in both.
+Player: Alright, Quinn what do you think?
+Quinn: We should take a note from Singapore and incorporate some of these supertrees or something very similar. 
+Quinn: I don't know if you have every heard of them. They are these manmade treelike towers that act as a vertical garden. 
+Quinn: They also have solar panels on top allowing them to serve multiple purposes. 
+Quinn: They are also connected to nearby buildings allowing them to be used as exhaust towers for airflow.
+Leo: That actually doesn't sound that bad dude. I mean they are no real supertrees but they sound pretty cool.
+Shana: I think you folks are missing the point a bit.
+Shana: A public park isn't only about putting some trees, grass and benches down.
+Shana: It is a communal area.
+Shana: You could have tables set up with chessboards, areas for sports, art or even entire waterfalls that make use of the city river.
+Shana: I think we should invest more in the public of this public park.
+-> Player: I agree, we should focus on the communal aspect of this public park.
+    <<SetSprite RenovationProject CulturePark>>
+-> Player: Making it a nature reserve should serve multiple purposes. let's do that.
+    <<SetSprite RenovationProject NatureReserve>>
+-> Player: These supertrees sounds useful let's incorporate those.
+    <<SetSprite RenovationProject SocietyParkWithinTrees>>
+<<set $MadeChoice to true>>
 ===

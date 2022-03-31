@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     
     [Header("Optional Dialogue Aesthetics")]
     public Sprite dialogueSprite;
-    public Sprite backgroundSprite;
+    public Color backgroundColor;
     public TMP_FontAsset font;
     public Color textColor = Color.white;
 
@@ -23,6 +23,7 @@ public class NPC : MonoBehaviour
     
     public void StartConversation()
     {
+        if (conversationStartNode == "") return;
         if (dialogueRunner.IsDialogueRunning) return;
         dialogueRunner.StartDialogue(conversationStartNode);
     }

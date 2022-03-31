@@ -18,14 +18,13 @@ public class DialogueDecorator : MonoBehaviour
     [Header("Player Style Settings")]
     [SerializeField] private TMP_FontAsset playerFont;
     [SerializeField] private Color playerTextColor;
+    [SerializeField] private Color playerBackgroundColor;
 
     private Color targetColor;
-    private Color baseBackgroundImageColor;
 
     private void Start()
     {
         dialogueRunner = FindObjectOfType<DialogueRunner>();
-        baseBackgroundImageColor = backgroundImageComponent.color;
     }
 
     private void LateUpdate()
@@ -47,6 +46,7 @@ public class DialogueDecorator : MonoBehaviour
             if (speakerNameProvider.text == "Player")
             {
                 targetColor = new Color(1, 1, 1, 0);
+                backgroundImageComponent.color = playerBackgroundColor;
                 SetStyleOnTextComponents(influencedTextComponents, playerFont, playerTextColor);
             }
             else
@@ -67,15 +67,7 @@ public class DialogueDecorator : MonoBehaviour
                     
                     SetStyleOnTextComponents(influencedTextComponents, npc.font, npc.textColor);
                     
-                    if (npc.backgroundSprite)
-                    {
-                        backgroundImageComponent.sprite = npc.backgroundSprite;
-                        backgroundImageComponent.color = Color.white;
-                    }
-                    else
-                    {
-                        backgroundImageComponent.color = baseBackgroundImageColor;
-                    }
+                    backgroundImageComponent.color = npc.backgroundColor;
                     break;
                 }
             }
